@@ -1,0 +1,26 @@
+public class HW1 {
+       public static void main (String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите значение, до которого будем искать простые числа");
+            int num = scanner.nextInt();
+            for (int i=2;i<num;i++){
+                if(checkSimple(i))
+                    System.out.print(i + " ");
+            }
+        }
+        public static boolean checkSimple(int i){
+            if (i<=1)
+                return false;
+            else if (i <=3)
+                return true;
+            else if (i%2==0 || i %3 ==0)
+                return false;
+
+            for (int n = 5; n * n <= i; n += 6)
+                {
+                    if (i % n == 0 || i % (n + 2) == 0)
+                        return false;
+            }
+            return true;
+        }
+}
