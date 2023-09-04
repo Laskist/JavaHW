@@ -12,12 +12,12 @@ public class Main {
             for (Map.Entry<String, String> entry : criteria.entrySet()) {
                 switch (entry.getKey()) {
                     case "ram":
-                        if (notebook.getRam() != Integer.parseInt(entry.getValue())) {
+                        if (notebook.getRam() < Integer.parseInt(entry.getValue())) {
                             criteriaMatch = false;
                         }
                         break;
                     case "hdd":
-                        if (notebook.getHdd() != Integer.parseInt(entry.getValue())) {
+                        if (notebook.getHdd() < Integer.parseInt(entry.getValue())) {
                             criteriaMatch = false;
                         }
                         break;
